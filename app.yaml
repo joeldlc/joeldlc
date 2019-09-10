@@ -1,25 +1,9 @@
 runtime: python27
 api_version: 1
-threadsafe: yes
-
-# Setup to be restricted to this Cloud Build.
-env_variables:
-  API_KEY: AIzaSyAYQ5kp6Vfu8rB2rvDLpZOOK_KzYWPqm5k
-
+threadsafe: true
 handlers:
-
   - url: /
     static_files: dist/joeldlc/index.html
     upload: dist/joeldlc/index.html
   - url: /
-    static_dir: dist/joeldlc
-
-skip_files:
-  - e2e/
-  - node_modules/
-  - src/
-  - ^(.*/)?\..*$
-  - ^(.*/)?.*\.json$
-  - ^(.*/)?.*\.md$
-  - ^(.*/)?.*\.yaml$
-  - ^LICENSE
+    static_dir: dist/
