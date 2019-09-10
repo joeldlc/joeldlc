@@ -5,8 +5,8 @@ steps:
     args: [ 'install' ]
 
   # Run unit tests
-  - name: 'gcr.io/joeldlc-252516/ng'
-    args: ['test', '--watch=false' ]
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'run', 'test', '--', '--watch=false']
     env:
       - 'CHROME_BIN=/usr/bin/chromium-browser'
 
