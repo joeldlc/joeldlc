@@ -7,6 +7,8 @@ steps:
   # Run unit tests
   - name: 'gcr.io/cloud-builders/npm'
     args: [ 'run', 'test' ]
+    env:
+      - 'CHROME_BIN=/usr/bin/chromium-browser'
 
   # Build productive files
   - name: 'gcr.io/cloud-builders/npm'
