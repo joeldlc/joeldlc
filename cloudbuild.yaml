@@ -4,10 +4,10 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: [ 'install' ]
 
+  # Run unit tests
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'run', 'test' ]
+
   # Build productive files
   - name: 'gcr.io/cloud-builders/npm'
     args: [ 'run', 'build', '--prod' ]
-
-  # Deploy to google cloud app engine
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', '--version=prod']
