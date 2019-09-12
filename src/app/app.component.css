@@ -9,6 +9,7 @@
 .avatar-container {
   height: auto;
   background-color: #a51a1a;
+  cursor: pointer;
 }
 
 .avatar-title {
@@ -47,6 +48,7 @@
   text-transform: uppercase;
   padding: 10px;
   list-style-type: none;
+  cursor: pointer;
 }
 
 .fab {

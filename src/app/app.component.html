@@ -1,26 +1,31 @@
 <mat-sidenav-container class="app-container">
   <mat-sidenav class="app-sidenav" mode="side" opened>
-    <div class="avatar-container">
+    <div class="avatar-container"
+         (click)="setRoute('HOME')">
       <img class="avatar" alt="avatar" src="../assets/images/avatar.jpg">
       <h1 class="avatar-title">Joel De La Cruz</h1>
       <h2 class="avatar-subtitle">Software Engineer, Web Applications</h2>
     </div>
     <div class="nav-table">
       <ul>
-        <li>Resume</li>
-        <li>Contact Me</li>
-        <li>Portfolio</li>
-        <li>Blog</li>
+        <li (click)="setRoute('RESUME')">Resume</li>
+        <li (click)="setRoute('CONTACT')">Contact Me</li>
+        <li (click)="setRoute('PORTFOLIO')">Portfolio</li>
+        <li (click)="setRoute('BLOG')">Blog</li>
       </ul>
       <ul class="social-media">
-        <i class="fab fa-linkedin fa-3x"></i>
-        <i class="fab fa-github-square fa-3x"></i>
-        <i class="fab fa-twitter-square fa-3x"></i>
+        <a href="https://www.linkedin.com/in/joeldlc/"><i class="fab fa-linkedin fa-3x"></i></a>
+        <a href="https://github.com/joeldlc"><i class="fab fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/joeldlcp"><i class="fab fa-twitter-square fa-3x"></i></a>
       </ul>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-home></app-home>
+    <app-home *ngIf="currRoute == 'HOME'"></app-home>
+    <app-resume *ngIf="currRoute == 'RESUME'"></app-resume>
+    <app-contact *ngIf="currRoute == 'CONTACT'"></app-contact>
+    <app-portfolio *ngIf="currRoute == 'PORTFOLIO'"></app-portfolio>
+    <app-blog *ngIf="currRoute == 'BLOG'"></app-blog>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
