@@ -21,7 +21,7 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-home *ngIf="currRoute == 'HOME'"></app-home>
+    <app-home *ngIf="currRoute == 'HOME'" (routeChanged)="setRoute($event)"></app-home>
     <app-resume *ngIf="currRoute == 'RESUME'"></app-resume>
     <app-contact *ngIf="currRoute == 'CONTACT'"></app-contact>
     <app-portfolio *ngIf="currRoute == 'PORTFOLIO'"></app-portfolio>
