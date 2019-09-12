@@ -41,3 +41,15 @@
   margin-left:auto;
   margin-right:auto;
 }
+
+.nav-table li {
+  color: #a51a1a;
+  text-transform: uppercase;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.fab {
+  color: #a51a1a;
+  padding: 10px;
+}
