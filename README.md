@@ -1,6 +1,6 @@
-# Joeldlc
+# Joel De La Cruz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
+Profession software engineer portfolio website for Joel De La Cruz.
 
 ## Development server
 
