@@ -8,10 +8,30 @@
     </div>
     <div class="nav-table">
       <ul>
-        <li (click)="setRoute('RESUME')">Resume</li>
-        <li (click)="setRoute('CONTACT')">Contact Me</li>
-        <li (click)="setRoute('PORTFOLIO')">Portfolio</li>
-        <li (click)="setRoute('BLOG')">Blog</li>
+        <li (click)="setRoute('RESUME')" (mouseenter) ="setStagingRoute('RESUME')" (mouseleave) ="setStagingRoute('')">
+          <span *ngIf="currRoute!='RESUME' && stagingRoute!='RESUME'; else resumeStaged">Resume</span>
+          <ng-template #resumeStaged>
+            <b>Resume ></b>
+          </ng-template>
+        </li>
+        <li (click)="setRoute('CONTACT')" (mouseenter) ="setStagingRoute('CONTACT')" (mouseleave) ="setStagingRoute('')">
+          <span *ngIf="currRoute!='CONTACT' && stagingRoute!='CONTACT'; else contactStaged">Contact Me</span>
+          <ng-template #contactStaged>
+            <b>Contact Me ></b>
+          </ng-template>
+        </li>
+        <li (click)="setRoute('PORTFOLIO')" (mouseenter) ="setStagingRoute('PORTFOLIO')" (mouseleave) ="setStagingRoute('')">
+          <span *ngIf="currRoute!='PORTFOLIO' && stagingRoute!='PORTFOLIO'; else portfolioStaged">Portfolio</span>
+          <ng-template #portfolioStaged>
+            <b>Portfolio ></b>
+          </ng-template>
+        </li>
+        <li (click)="setRoute('BLOG')" (mouseenter) ="setStagingRoute('BLOG')" (mouseleave) ="setStagingRoute('')">
+          <span *ngIf="currRoute!='BLOG' && stagingRoute!='BLOG'; else blogStaged">Blog</span>
+          <ng-template #blogStaged>
+            <b>Blog ></b>
+          </ng-template>
+        </li>
       </ul>
       <ul class="social-media">
         <a href="https://www.linkedin.com/in/joeldlc/"><i class="fab fa-linkedin fa-3x"></i></a>
