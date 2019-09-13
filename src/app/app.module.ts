@@ -26,7 +26,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ResumeModule,
     PortfolioModule,
     ContactModule,
-    BlogModule
+    BlogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
