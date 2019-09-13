@@ -1,6 +1,6 @@
 # Joel De La Cruz
 
-Profession software engineer portfolio website for Joel De La Cruz.
+Professional software engineer portfolio website for Joel De La Cruz(me).
 
 ## Development server
 
