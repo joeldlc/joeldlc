@@ -1,13 +1,51 @@
 <mat-sidenav-container class="app-container">
   <mat-sidenav class="app-sidenav" mode="side" opened>
-    <div class="avatar-container">
+    <div class="avatar-container"
+         (click)="setRoute('HOME')">
       <img class="avatar" alt="avatar" src="../assets/images/avatar.jpg">
       <h1 class="avatar-title">Joel De La Cruz</h1>
       <h2 class="avatar-subtitle">Software Engineer, Web Applications</h2>
     </div>
+    <div class="nav-table">
+      <ul>
+        <li (click)="setRoute('RESUME')" (mouseenter) ="setStagingRoute('RESUME')" (mouseleave) ="setStagingRoute('')">
+          <span *ngIf="currRoute!='RESUME' && stagingRoute!='RESUME'; else resumeStaged">Resume</span>
+          <ng-template #resumeStaged>
+            <b>Resume ></b>
+          </ng-template>
+        </li>
+        <li (click)="setRoute('CONTACT')" (mouseenter) ="setStagingRoute('CONTACT')" (mouseleave) ="setStagingRoute('')">
+          <span *ngIf="currRoute!='CONTACT' && stagingRoute!='CONTACT'; else contactStaged">Contact Me</span>
+          <ng-template #contactStaged>
+            <b>Contact Me ></b>
+          </ng-template>
+        </li>
+        <li (click)="setRoute('PORTFOLIO')" (mouseenter) ="setStagingRoute('PORTFOLIO')" (mouseleave) ="setStagingRoute('')">
+          <span *ngIf="currRoute!='PORTFOLIO' && stagingRoute!='PORTFOLIO'; else portfolioStaged">Portfolio</span>
+          <ng-template #portfolioStaged>
+            <b>Portfolio ></b>
+          </ng-template>
+        </li>
+        <li (click)="setRoute('BLOG')" (mouseenter) ="setStagingRoute('BLOG')" (mouseleave) ="setStagingRoute('')">
+          <span *ngIf="currRoute!='BLOG' && stagingRoute!='BLOG'; else blogStaged">Blog</span>
+          <ng-template #blogStaged>
+            <b>Blog ></b>
+          </ng-template>
+        </li>
+      </ul>
+      <ul class="social-media">
+        <a href="https://www.linkedin.com/in/joeldlc/"><i class="fab fa-linkedin fa-3x"></i></a>
+        <a href="https://github.com/joeldlc"><i class="fab fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/joeldlcp"><i class="fab fa-twitter-square fa-3x"></i></a>
+      </ul>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    Humble beginnings.
+    <app-home *ngIf="currRoute == 'HOME'" (routeChanged)="setRoute($event)"></app-home>
+    <app-resume *ngIf="currRoute == 'RESUME'"></app-resume>
+    <app-contact *ngIf="currRoute == 'CONTACT'"></app-contact>
+    <app-portfolio *ngIf="currRoute == 'PORTFOLIO'"></app-portfolio>
+    <app-blog *ngIf="currRoute == 'BLOG'"></app-blog>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
