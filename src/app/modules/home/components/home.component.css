@@ -1,3 +1,13 @@
+.intro {
+  margin: 5px;
+}
+
+mat-card {
+  padding: 20px;
+  margin: 5px;
+  width: 95%;
+}
+
 button {
   background-color: #a51a1a;
   color: white;
