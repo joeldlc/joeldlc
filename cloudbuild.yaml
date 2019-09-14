@@ -1,6 +1,8 @@
 steps:
+  # Install packages
   - name: 'buildkite/puppeteer'
     args: ['npm','install']
+
   # Build prod files
   - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
     args: [ 'run', 'build', '--prod' ]
