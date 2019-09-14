@@ -10,5 +10,3 @@ steps:
   # Run tests
   - name: 'buildkite/puppeteer'
     args: ['npm',  'run', 'test-headless' ]
-  - name: 'buildkite/puppeteer'
-    args: ['npm',  'run', 'e2e' ]
