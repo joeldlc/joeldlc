@@ -1,19 +1,12 @@
 steps:
   - name: 'buildkite/puppeteer'
     args: ['npm','install']
-  - name: 'buildkite/puppeteer'
-    args: ['npm',  'run', 'test-headless' ]
-
-  # Install node packages
-  - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
-    args: [ 'install' ]
-
   # Build prod files
   - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
     args: [ 'run', 'build', '--prod' ]
 
   # Run tests
-  - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
-    args: [ 'run', 'test-headless' ]
-  - name: 'gcr.io/cloud-builders/npm:node-10.10.0'
-    args: [ 'run', 'e2e' ]
+  - name: 'buildkite/puppeteer'
+    args: ['npm',  'run', 'test-headless' ]
+  - name: 'buildkite/puppeteer'
+    args: ['npm',  'run', 'e2e' ]
